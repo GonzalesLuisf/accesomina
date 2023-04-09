@@ -1,0 +1,35 @@
+{% extends '../index_master.html' %}
+
+{% block content %}
+<div class="right_col" role="main">
+    <h1>Listar Personal No Registrado</h1>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-secondary ">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">CardID</th>
+              <th scope="col">Fecha de Evento</th>
+              <th scope="col">Hora de Evento</th>
+              <th scope="col">Evento</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {% for u in personalregistrado %}
+                <tr>
+                <th scope="row">{{ u.id}}</th>
+                <td>{{ u.cardid}}</td>
+                <td>{{ u.f_evento}}</td>
+                <td>{{ u.h_evento}}</td>
+                <td>{{ u.evento}}</td>
+                </tr>
+            {% endfor %}
+          </tbody>
+      
+        </table>
+      </div>
+
+</div>
+{% endblock%}
